@@ -1,0 +1,60 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.Home{
+    width: 100%;
+    height: 200vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Body{
+    width: 90%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-info{
+    width: 100%;
+    height: 15%;
+    border-radius: 10px;
+    background-color: #EAFFDC;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info-left{
+    width: 45%;
+    height: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.info-right{
+    width: 45%;
+    height: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.text-info{
+    width: 60%;
+    height: 100%;
+    font-size: 85%;
+    text-align: justify;
+}
+
+.img-info{
+    width: 30%;
+    height: 90%;
+    border-radius: 12px;
+}

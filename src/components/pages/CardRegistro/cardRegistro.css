@@ -1,0 +1,35 @@
+.card-Registro{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Link-registro{
+    width: 70%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.CardInput-Registro{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.image-Registro{
+    width: 92%;
+    display: flex;
+    justify-content: left;
+}
+
+.TresR-Registro{
+    width: 10%;
+}

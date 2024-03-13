@@ -1,0 +1,13 @@
+input{
+    background-color: transparent;
+    width: 70%;
+    height: 4vh;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: solid 1px #000000;
+    box-shadow: 2px 2px 2px #006A0B;
+    background-color: #ffffff2a;
+}
+::placeholder{
+    color: #000000;
+}

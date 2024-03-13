@@ -1,0 +1,41 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+  }
+
+  .bodyContainer-Registro{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-Registro{
+    width: 60%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6AEB8A;
+    border-radius: 15px;
+  }
+  .fondoCard1-Registro{
+    width: 70%;
+    height: 100%;
+    background-color: #ffffff79;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border-radius: 15px 0px 0px 15px;
+  }
+  .fondoCard2-Registro{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
