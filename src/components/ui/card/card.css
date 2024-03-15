@@ -1,5 +1,6 @@
 .Card{
-    background-color: #c3f7d0;
+    background-color: #FFFFFF;
+    border: solid 1px;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;

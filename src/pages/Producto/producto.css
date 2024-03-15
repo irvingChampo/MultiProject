@@ -16,3 +16,12 @@
     flex-wrap: wrap;
 }
 
+.container-productos-menu{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+

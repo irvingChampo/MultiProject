@@ -1,0 +1,41 @@
+.Card{
+    background-color: #FFFFFF;
+    border: solid 1px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.text{
+    width: 90%;
+    height: 60%;
+    font-size: 9px;
+}
+.img-card{
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+.buttons-add{
+    width: 100%;
+    height: 5vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Link-modificar{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-modificar{
+    width: 90%;
+}

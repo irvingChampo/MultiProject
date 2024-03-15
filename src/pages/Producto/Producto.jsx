@@ -9,8 +9,11 @@ function Producto() {
     return ( 
         <section className='container-global'>
             <Header/>
+            <section className='container-productos-menu'>
                 <CardProducto img={escoba} title='Escoba' info='Este es un producto 100% hecho con botellas recicladas.' description1={'Mango:'} text1={'·Largo, de madera y rigido.'} description2={'Cerdas:'} text2={'Cerdas rigidas hechas 100% de botellasrecicladas.'} />
                 <CardMenu text="Relacionado a tu búsqueda"/>
+            </section>
+
             <Footer/>
         </section>
      );

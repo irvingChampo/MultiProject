@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Button from '../../ui/button/Button'
 import './cardProducto.css'
-
+import estrellas from '../../../../public/img/estrellas.png'
 // eslint-disable-next-line react/prop-types
 const CardProducto =  ({title, img, info, description1,text1, description2, text2}) => (
         <>
@@ -21,11 +21,12 @@ const CardProducto =  ({title, img, info, description1,text1, description2, text
                 </div>
                 <div className="container-right-producto">
                     <div className='container-info-text'>
-                        <h2>Caracteristicas:</h2>
-                        <h4>{description1}</h4>
+                        <h2 className='margin0'>Caracteristicas:</h2>
+                        <h4 className='margin-null'>{description1}</h4>
                         <p>{text1}</p>
-                        <h4>{description2}</h4>
+                        <h4 className='margin-null'>{description2}</h4>
                         <p>{text2}</p>
+                        <img className='star' src={estrellas}/>
                     </div>
                 </div>
             </section>
