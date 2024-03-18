@@ -4,6 +4,7 @@ import Input from '../../components/ui/input/Input'
 import Button from '../../components/ui/button/Button'
 import Image from '../../../public/img/image.png'
 import './addProduct.css'
+import { Link } from 'react-router-dom'
 
 function AddProduct() {
     return ( 
@@ -23,8 +24,8 @@ function AddProduct() {
                     <Input type="number" placeholder="Precio:" size="70" borde="5" height="5vh" />
                     <Input type="text" placeholder="Descripción:" size="70" borde="5" height="5vh" />
                     <div className='container-button'>
-                        <Button size="30" size2="65" backgroundColor="red">Cancelar</Button>
-                        <Button size="30" size2="65" backgroundColor="green">Agregar</Button>
+                        <Link className='Link-add-admin' to={'/admin'}><Button size="100" size2="100" backgroundColor="red">Cancelar</Button></Link>
+                        <Link className='Link-add-admin' to={'/admin'}><Button size="100" size2="100" backgroundColor="green">Agregar</Button></Link>
                     </div>
                 </div>
             </section>

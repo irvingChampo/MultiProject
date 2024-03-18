@@ -13,7 +13,7 @@ function ViewAdmin() {
                 <div className="container-cards">
                     <div className='title-admin'>
                         <h2 className='margin0'>Lista de productos</h2>
-                        <Link className='Link-add' to={'/AddProduct'}><img className='img-add' src={Add}/></Link>
+                        <Link className='Link-add' to={'/add-product'}><img className='img-add' src={Add}/></Link>
                     </div>
                     <Card textName="Escoba" descripcion="descripcion del producto" size="17" size2="44" image={escoba}/>
                     <Card textName="Escoba" descripcion="descripcion del producto" size="17" size2="44" image={escoba}/>

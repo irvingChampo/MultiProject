@@ -18,7 +18,7 @@ function Registro() {
             <Input type="number" placeholder="Telefono:" size="40" height='' borde='5'/>
             <Input type="password" placeholder="Contraseña:" size="40" height='' borde='5'/>
           </div>
-          <Link to={'/Home'} className='Link-registro'>
+          <Link to={'/home'} className='Link-registro'>
             <Button size="50" size2="50">Registrarme</Button>
           </Link>
       </div>

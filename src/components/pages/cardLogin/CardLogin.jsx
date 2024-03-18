@@ -11,10 +11,10 @@ const card = () => (
     <Input type="text" placeholder="Usuario:" size="70" borde="5" height="4vh"/>
     <Input type="password" placeholder="Contraseña:" size="70" borde="5" height="4vh"/>
     </div>
-    <Link to={'/Home'} className='Link-login'>
+    <Link to={'/home'} className='Link-login'>
     <Button size="100" size2="55">Login</Button>
     </Link>
-    <p>Aun no tienes cuenta? Has Clic <Link to={'/Registro'}>Aqui!</Link> </p>
+    <p>Aun no tienes cuenta? Has Clic <Link to={'/registro'}>Aqui!</Link> </p>
   </div>
 );
 

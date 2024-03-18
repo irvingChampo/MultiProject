@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
-import Button from '../../ui/button/Button'
-import './cardProducto.css'
-import estrellas from '../../../../public/img/estrellas.png'
+import estrellas from '../../../../public/img/estrellas.png';
+import Button from '../../ui/button/Button';
+import './cardProducto.css';
 // eslint-disable-next-line react/prop-types
 const CardProducto =  ({title, img, info, description1,text1, description2, text2}) => (
         <>
             <section className="container-productos">
             <div className='container-links'>
-                <Link className='Link' to={'/Home'}>/Home</Link>
-                <Link className='Link' to={'/Home/Producto'}>/Producto</Link>
+                <Link className='Link' to={'/home'}>/Home</Link>
+                <Link className='Link' to={'/home/producto'}>/Producto</Link>
             </div>
                 <div className="container-left-producto">
                         <img className='image-producto' src={img} />

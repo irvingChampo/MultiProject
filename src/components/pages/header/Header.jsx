@@ -22,7 +22,7 @@ function Header() {
                         <a href='#' id="menu-btn"><img width={"70%"}  src={menu} alt="icon" /></a>
                         <div className="menu-contenido">
                             <h6 className='Categoria'>Categorias</h6>
-                            <Link to={'/Categoria'}>Llantas</Link>
+                            <Link to={'/categoria'}>Llantas</Link>
                             <Link >Plástico (Pet)</Link>
                             <Link >Aluminio</Link>
                             <Link >Plástico (bolsas)</Link>
