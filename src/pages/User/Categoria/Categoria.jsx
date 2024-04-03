@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import Volver from '../../../public/img/volver.png';
-import escoba from '../../../public/img/escobas.jpg';
-import Header from '../../components/pages/header/Header';
-import Card from '../../components/ui/card/Card';
+import Volver from '../../../../public/img/volver.png';
+import escoba from '../../../../public/img/escobas.jpg';
+import Header from '../../../components/pages/header/Header';
+import Card from '../../../components/ui/card/Card';
 import './categoria.css';
 
 function Categoria() {

@@ -1,5 +1,5 @@
-import reciclar from '../../../public/img/reciclar.webp';
-import RegistroPages from '../../components/pages/CardRegistro/CardRegistro';
+import reciclar from '../../../../public/img/reciclar.webp';
+import RegistroPages from '../../../components/pages/CardRegistro/CardRegistro';
 import './registro.css';
 
 function Login() {

@@ -1,8 +1,8 @@
-import escoba from '../../../public/img/escobas.jpg'
-import CardMenu from '../../components/pages/cardMenu/CardMenu'
-import CardProducto from '../../components/pages/cardProducto/CardProducto'
-import Footer from '../../components/pages/footer/Footer'
-import Header from '../../components/pages/header/Header'
+import escoba from '../../../../public/img/escobas.jpg'
+import CardMenu from '../../../components/pages/cardMenu/CardMenu'
+import CardProducto from '../../../components/pages/cardProducto/CardProducto'
+import Footer from '../../../components/pages/footer/Footer'
+import Header from '../../../components/pages/header/Header'
 import './producto.css'
 
 function Producto() {

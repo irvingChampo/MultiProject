@@ -1,6 +1,6 @@
 import './ayuda.css'
-import Header from '../../components/pages/header/Header'
-import VideoPrueba from '../../../public/img/videoPrueba.mp4'
+import Header from '../../../components/pages/header/Header'
+import VideoPrueba from '../../../../public/img/videoPrueba.mp4'
 
 function Ayuda() {
     return ( 

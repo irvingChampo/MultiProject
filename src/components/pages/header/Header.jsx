@@ -16,7 +16,7 @@ function Header() {
                     <img width={"3%"}  src={reciclar} alt="icon" />
                     <aside className='container-icons'>
                         <a href='#'><img width={"70%"}  src={ayuda} alt="icon" /></a>
-                        <a href='#'><img width={"70%"}  src={notificacion} alt="icon" /></a>
+                        <Link to={'/chat'}><img width={"70%"}  src={notificacion} alt="icon" /></Link>
                         <a href='#'><img width={"70%"}  src={carrito} alt="icon" /></a>
                         <div className="menu">
                         <a href='#' id="menu-btn"><img width={"70%"}  src={menu} alt="icon" /></a>

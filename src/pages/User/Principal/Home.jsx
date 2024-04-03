@@ -1,8 +1,8 @@
-import mundo from '../../../public/img/mundo.png';
-import recicla from '../../../public/img/recicla.png';
-import CardMenu from '../../components/pages/cardMenu/CardMenu';
-import Footer from '../../components/pages/footer/Footer';
-import Header from '../../components/pages/header/Header';
+import mundo from '../../../../public/img/mundo.png';
+import recicla from '../../../../public/img/recicla.png';
+import CardMenu from '../../../components/pages/cardMenu/CardMenu';
+import Footer from '../../../components/pages/footer/Footer';
+import Header from '../../../components/pages/header/Header';
 import './home.css';
 function Home() {
     return ( 

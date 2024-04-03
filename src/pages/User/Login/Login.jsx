@@ -1,6 +1,6 @@
-import InicioSesion from '../../components/pages/cardLogin/CardLogin';
+import InicioSesion from '../../../components/pages/cardLogin/CardLogin';
 import './login.css';
-import reciclar from '../../../public/img/reciclar.webp';
+import reciclar from '../../../../public/img/reciclar.webp';
 
 function Login() {
     return ( 

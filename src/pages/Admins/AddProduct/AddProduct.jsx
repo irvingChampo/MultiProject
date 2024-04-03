@@ -1,8 +1,8 @@
-import Header from '../../components/pages/header/Header'
-import Footer from '../../components/pages/footer/Footer'
-import Input from '../../components/ui/input/Input'
-import Button from '../../components/ui/button/Button'
-import Image from '../../../public/img/image.png'
+import Header from '../../../components/pages/header/Header'
+import Footer from '../../../components/pages/footer/Footer'
+import Input from '../../../components/ui/input/Input'
+import Button from '../../../components/ui/button/Button'
+import Image from '../../../../public/img/image.png'
 import './addProduct.css'
 import { Link } from 'react-router-dom'
 

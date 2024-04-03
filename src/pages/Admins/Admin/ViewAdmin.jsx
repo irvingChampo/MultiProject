@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import Add from '../../../public/img/add.png';
-import escoba from '../../../public/img/escobas.jpg';
-import Header from '../../components/pages/header/Header';
-import Card from '../../components/ui/cardAdmin/CardAdmin';
+import Add from '../../../../public/img/add.png';
+import escoba from '../../../../public/img/escobas.jpg';
+import Header from '../../../components/pages/header/Header';
+import Card from '../../../components/ui/cardAdmin/CardAdmin';
 import './viewAdmin.css';
 
 function ViewAdmin() {
