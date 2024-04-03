@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import './chat.css';
 import Header from '../../pages/header/Header'
 import Input from '../../ui/input/Input';

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Header from '../../../components/pages/header/Header';
 import './pedidos.css'
 
