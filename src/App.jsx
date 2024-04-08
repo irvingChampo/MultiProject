@@ -7,9 +7,15 @@ import AddProduct from './pages/Admins/AddProduct/AddProduct';
 import ViewAdmin from './pages/Admins/Admin/ViewAdmin';
 import Tabla from './pages/Admins/Pedidos/Tabla';
 import Ayuda from './pages/User/Ayuda/Ayuda';
-import Categoria from './pages/User/Categoria/Categoria';
 import Producto from './pages/User/Producto/Producto';
 import Carrito from './pages/User/Carrito/Carrito'
+import Aluminio from './pages/User/Categoria/Aluminio/Aluminio'
+import Bolsa from './pages/User/Categoria/Plastico(Bolsa)/Bolsas'
+import Pet from './pages/User/Categoria/Plastico(Pet)/Pet'
+import Llantas from './pages/User/Categoria/Llantas/Llantas'
+
+
+
 
 function App() {
   return ( 
@@ -20,13 +26,16 @@ function App() {
                 <Route path='/registro' element={<Registro/>}/>
                 <Route path='/home' element={<Home/>}/>
                 <Route path='/home/producto' element={<Producto/>}/>
-                <Route path='/categoria' element={<Categoria/>}/>
                 <Route path='/add-product' element={<AddProduct/>}/>
                 <Route path='/admin' element={<ViewAdmin/>}/>
                 <Route path='/ayuda' element={<Ayuda/>}/>
                 <Route path='/chat' element={<Chat/>}/>
                 <Route path='/pedidos' element={<Tabla/>}/>
                 <Route path='/carrito' element={<Carrito/>}/>
+                <Route path='/Aluminio' element={<Aluminio/>}/>
+                <Route path='/Bolsa' element={<Bolsa/>}/>
+                <Route path='/Pet' element={<Pet/>}/>
+                <Route path='/Llantas' element={<Llantas/>}/>
             </Routes>
         </Router>
     </>

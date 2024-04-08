@@ -4,6 +4,8 @@ import Button from '../../ui/button/Button';
 import Input from '../../ui/input/Input';
 import './cardLogin.css';
 
+
+
 const card = () => (
   <div className="card">
     <img className='TresR' src={TresR} alt="Imagen de la tarjeta" />

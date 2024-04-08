@@ -3,15 +3,15 @@
 <p>
 Como clonar este repositorio? :</p>
 
-- git clone https://github.com/irvingChampo/MultiProject.git 
+- git clone https://github.com/irvingChampo/MultiProject.git
 
 # Documentación de postman.
 
 ## USUARIOS:
 - ### **GET** Obtener usuario por id
+```
+//EJEMPLO
 
-``` 
-//EJEMPLO 
 
 curl --location 'http://localhost:8080/api/v1/usuarios/usuarios/7777' \
 --data ''
@@ -20,8 +20,8 @@ curl --location 'http://localhost:8080/api/v1/usuarios/usuarios/7777' \
 
 - ### PUT ActualizarUsuarios
 
-``` 
-//EJEMPLO 
+```
+//EJEMPLO
 
 curl --location --request PUT 'http://localhost:8080/api/v1/usuarios/usuarios/1221' \
 --data '{
@@ -39,8 +39,8 @@ curl --location --request PUT 'http://localhost:8080/api/v1/usuarios/usuarios/12
 
 - ### DELETE EliminarUsuarios
 
-``` 
-//EJEMPLO 
+```
+//EJEMPLO
 
 curl --location --request DELETE 'http://localhost:8080/api/v1/usuarios/usuarios/1221' \
 --data ''
@@ -49,8 +49,8 @@ curl --location --request DELETE 'http://localhost:8080/api/v1/usuarios/usuarios
 
 - ### GET ObtenerUsuarios
 
-``` 
-//EJEMPLO 
+```
+//EJEMPLO
 
 curl --location 'http://localhost:8080/api/v1/usuarios/usuarios' \
 --data ''
@@ -61,8 +61,8 @@ curl --location 'http://localhost:8080/api/v1/usuarios/usuarios' \
 
 - ### GET ObtenerProductos
 
-``` 
-//EJEMPLO 
+```
+//EJEMPLO
 
 curl --location 'http://localhost:8080/api/v1/productos' \
 --data ''
@@ -71,8 +71,8 @@ curl --location 'http://localhost:8080/api/v1/productos' \
 
 - ### GET ObtenerProductosId
 
-``` 
-//EJEMPLO 
+```
+//EJEMPLO
 
 curl --location 'http://localhost:8080/api/v1/productos/1003' \
 --data ''
@@ -81,8 +81,8 @@ curl --location 'http://localhost:8080/api/v1/productos/1003' \
 
 - ### PUT ActualizarProductos
 
-``` 
-//EJEMPLO 
+```
+//EJEMPLO
 
 curl --location --request PUT 'http://localhost:8080/api/v1/productos/1003' \
 --data '{
@@ -100,8 +100,8 @@ curl --location --request PUT 'http://localhost:8080/api/v1/productos/1003' \
 
 - ### DELETE EliminarProducto
 
-``` 
-//EJEMPLO 
+```
+//EJEMPLO
 
 curl --location --request DELETE 'http://localhost:8080/api/v1/productos/1003' \
 --data ''
@@ -112,8 +112,8 @@ curl --location --request DELETE 'http://localhost:8080/api/v1/productos/1003' \
 
 - ### POST Signin
 
-``` 
-//EJEMPLO 
+```
+//EJEMPLO
 
 curl --location 'http://localhost:8080/api/v1/auth/signin' \
 --data '{
@@ -124,8 +124,8 @@ curl --location 'http://localhost:8080/api/v1/auth/signin' \
 
 - ### POST Signup
 
-``` 
-//EJEMPLO 
+```
+//EJEMPLO
 
 curl --location 'http://localhost:8080/api/v1/auth/signup' \
 --data-raw '{
