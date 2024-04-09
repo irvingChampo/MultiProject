@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
-import Header from '../../../components/pages/header/Header';
+import Header from '../../../components/pages/HeaderAdmin/HeaderAdmin';
 import './pedidos.css'
 
 // eslint-disable-next-line react/prop-types

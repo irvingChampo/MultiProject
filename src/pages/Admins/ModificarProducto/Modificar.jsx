@@ -1,4 +1,4 @@
-import Header from '../../../components/pages/header/Header'
+import Header from '../../../components/pages/HeaderAdmin/HeaderAdmin';
 import Footer from '../../../components/pages/footer/Footer'
 import Input from '../../../components/ui/input/Input'
 import Button from '../../../components/ui/button/Button'

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Add from '../../../../public/img/add.png';
 import escoba from '../../../../public/img/escobas.jpg';
-import Header from '../../../components/pages/header/Header';
+import Header from '../../../components/pages/HeaderAdmin/HeaderAdmin';
 import Card from '../../../components/ui/cardAdmin/CardAdmin';
 import './viewAdmin.css';
 
