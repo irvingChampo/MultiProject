@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import Header from '../../../components/pages/header/Header';
 import './pedidos.css'
 
@@ -19,7 +20,7 @@ const Tabla = ({ datos }) => {
         {datos.map((fila, index) => (
           <tr key={index}>
             <td>{index + 1}</td>
-            <td>{fila.nombreUsuario}</td>
+            <td>{fila.nombreUsuario} <Link to={''}>Chat</Link></td>
             <td>{fila.infoProductos}</td>
           </tr>
         ))}
