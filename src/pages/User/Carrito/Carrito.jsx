@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Volver from '../../../../public/img/volver.png';
 import escoba from '../../../../public/img/escobas.jpg';
 import Header from '../../../components/pages/header/Header';
-import Card from '../../../components/ui/card/Card';
+import Card from '../../../components/ui/CardCarrito/CardCarrito';
 import Button from '../../../components/ui/button/Button'
 import './carrito.css';
 
@@ -28,7 +28,7 @@ function Carrito() {
                     <Card textName="Escoba" descripcion="descripcion del producto" size="17" size2="40" image={escoba}/>
                     <div className='info-carrito'>
                         <h2 className='acumulado'>$000</h2>
-                        <Button size="10" size2="70">Login</Button>
+                        <Button size="10" size2="70">Pedir</Button>
                     </div>
                 </div>
             </section>
