@@ -23,6 +23,7 @@ function AddProduct() {
                     <Input type="text" placeholder="Categoria:" size="70" borde="5" height="5vh" />
                     <Input type="number" placeholder="Precio:" size="70" borde="5" height="5vh" />
                     <Input type="text" placeholder="Descripción:" size="70" borde="5" height="5vh" />
+                    <Input type="number" placeholder="En existencia:" size="70" borde="5" height="5vh" />
                     <div className='container-button'>
                         <Link className='Link-add-admin' to={'/admin'}><Button size="100" size2="100" backgroundColor="red">Cancelar</Button></Link>
                         <Link className='Link-add-admin' to={'/admin'}><Button size="100" size2="100" backgroundColor="green">Agregar</Button></Link>
