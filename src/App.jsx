@@ -14,6 +14,7 @@ import Aluminio from './pages/User/Categoria/Aluminio/Aluminio'
 import Bolsa from './pages/User/Categoria/Plastico(Bolsa)/Bolsas'
 import Pet from './pages/User/Categoria/Plastico(Pet)/Pet'
 import Llantas from './pages/User/Categoria/Llantas/Llantas'
+import './index.css'
 function App() {
   return ( 
     <>
