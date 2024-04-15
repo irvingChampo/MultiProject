@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-export const useUpdate = () => {
+export const useUpdate = (url, updateObject) => {
     const [error, setError] = useState(false);
     const handleUpdate = async(e) => {
         e.preventDefault();
         try {
+            console.log(updateObject);
             const res = await fetch(url, updateObject, {
                 method: "PUT",
                 headers: {
@@ -18,6 +19,7 @@ export const useUpdate = () => {
 
         } catch (error) {
             console.error("Error updating data: ", error);
+            setError(true)
         }
     }
   return {

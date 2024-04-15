@@ -25,7 +25,7 @@ const card = () => {
   );
 
  if(!avalible){
-  navigate('/admin')
+  navigate('/home')
  }
 
   return (

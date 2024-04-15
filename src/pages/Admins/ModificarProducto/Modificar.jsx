@@ -20,7 +20,19 @@ function AddProduct() {
     const [precio, setPrecio] = useState("")
     const [categoria, setCategoria] = useState("")
 
-    const {handleUpdate} = useUpdate(`http://44.194.73.147/api/v1/productos/${id}`)
+    const productObject = {
+      id_producto:id,
+      nombre,
+      descripcion,
+      cantidad,
+      caracteristicas:caracteristicas,
+      foto_producto:foto,
+      precio,
+      categoria
+    }
+  
+
+    const {handleUpdate} = useUpdate(`http://44.194.73.147/api/v1/productos/${id}`, productObject )
 
   return (
     <>
@@ -56,7 +68,7 @@ function AddProduct() {
           />
           <Input
             type="text"
-            placeholder="Descripción:"
+            placeholder="Caracteristicas:"
             size="70"
             borde="5"
             height="5vh"
