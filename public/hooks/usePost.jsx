@@ -6,6 +6,7 @@ const usePost = (url, postObject) => {
   const [avalible, setAvalible] = useState(true);
 
   const handleSubmit = async (e) => {
+    console.log(postObject);
     e.preventDefault();
 
     if (Object.values(postObject).every((value) => value === "")) {
@@ -32,6 +33,7 @@ const usePost = (url, postObject) => {
       const res = await fetch(url, requestOptions);
       const data = await res.json();
       console.log(data);
+      
 
       if (data.error) {
         setAvalible(true);
@@ -47,6 +49,9 @@ const usePost = (url, postObject) => {
 
       if (data.id_usuario) {
         localStorage.setItem("id_usuario", data.id_usuario);
+      }
+      if(data.roles){
+        localStorage.setItem('rol',data.roles)
       }
     } catch (error) {
       setError(true);

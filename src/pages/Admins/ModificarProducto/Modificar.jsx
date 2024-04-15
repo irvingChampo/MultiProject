@@ -20,6 +20,11 @@ function AddProduct() {
     const [precio, setPrecio] = useState("")
     const [categoria, setCategoria] = useState("")
 
+
+   const handleSubmit = async(e) => {
+    
+    e.preventDefault();
+
     const productObject = {
       id_producto:id,
       nombre,
@@ -31,8 +36,22 @@ function AddProduct() {
       categoria
     }
   
+    try {
+      const res = await fetch(`http://44.194.73.147/api/v1/productos/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+      },
+      body: JSON.stringify(productObject)
+    })
 
-    const {handleUpdate} = useUpdate(`http://44.194.73.147/api/v1/productos/${id}`, productObject )
+    const data = await res.json()
+    console.log('Data after update', data);
+    } catch (error) {
+      console.error('Error al actualizar', error);
+    }
+   }
 
   return (
     <>
@@ -105,7 +124,7 @@ function AddProduct() {
               </button>
             </Link>
 
-              <button className="bg-green-400 rounded-md p-2 shadow-md transition-colors hover:bg-green-600" onClick={handleUpdate}>
+              <button className="bg-green-400 rounded-md p-2 shadow-md transition-colors hover:bg-green-600" onClick={handleSubmit}>
                 Agregar
               </button>
 

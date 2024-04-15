@@ -16,6 +16,8 @@ function Registro() {
   const [telefono, setTelefono] = useState("");
   const [usuario, setUsuario] = useState("");
 
+  const [error, setError] = useState(false)
+
 
 
   const id_usuario = uuidv4();
@@ -31,7 +33,24 @@ function Registro() {
     foto_perfil: "URL de ejemplo"
   }
 
-  const { handleSubmit, error, information } = usePost('http://44.194.73.147/api/v1/auth/signup', userObject)
+  const handleSubmit = async(e) =>{
+    console.log(userObject);
+    e.preventDefault()
+    try {
+      const res = await fetch('http://44.194.73.147/api/v1/auth/signup',{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userObject),
+      })
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.error('error', error);
+      setError(true)
+    }
+  }
 
   return (
     <>

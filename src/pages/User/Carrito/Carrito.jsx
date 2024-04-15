@@ -47,6 +47,8 @@ function Carrito() {
                   image={producto.producto.foto_producto}
                   value={producto.producto.cantidad}
                   id = { producto.producto.id_producto }
+                  idUser = { idUser }
+                  idPro = { producto.producto._id }
                 />
               ))
             ) : (

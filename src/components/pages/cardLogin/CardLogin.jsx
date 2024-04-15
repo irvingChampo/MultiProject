@@ -24,9 +24,17 @@ const card = () => {
     loginUser
   );
 
- if(!avalible){
-  navigate('/home')
- }
+  const rol = localStorage.getItem('rol');
+  console.log('ROLLLLLLLLLLLLL', rol);
+  if(rol === 'Administrador' && !avalible){
+    navigate('/admin')
+    return;
+  }
+
+  if(!avalible){
+    navigate('/home')
+  }
+
 
   return (
    <>
