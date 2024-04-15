@@ -23,9 +23,9 @@ function App() {
                 <Route path='/' element={<Login/>}/>
                 <Route path='/registro' element={<Registro/>}/>
                 <Route path='/home' element={<Home/>}/>
-                <Route path='/home/producto' element={<Producto/>}/>
+                <Route path='/home/producto/:id' element={<Producto/>}/>
                 <Route path='/add-product' element={<AddProduct/>}/>
-                <Route path='/modificar-producto' element={<Modificar/>}/>
+                <Route path='/modificar-producto/:id' element={<Modificar/>}/>
                 <Route path='/admin' element={<ViewAdmin/>}/>
                 <Route path='/ayuda' element={<Ayuda/>}/>
                 <Route path='/chat' element={<Chat/>}/>

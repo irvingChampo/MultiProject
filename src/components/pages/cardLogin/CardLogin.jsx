@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import TresR from "../../../../public/img/Simbolo3r.png";
 import Button from "../../ui/button/Button";
 import Input from "../../ui/input/Input";
@@ -7,19 +7,26 @@ import { useState } from "react";
 import usePost from "../../../../public/hooks/usePost";
 import { Alert } from "../../Alert";
 
+
+
 const card = () => {
   const [user, setUser] = useState();
   const [password, setPassword] = useState();
+  const navigate = useNavigate(); 
 
   const loginUser = {
     usuario: user,
     contrasena: password,
   };
 
-  const { handleSubmit, error, informations } = usePost(
+  const { handleSubmit, error, informations, avalible } = usePost(
     "http://44.194.73.147/api/v1/auth/signin",
     loginUser
   );
+
+ if(!avalible){
+  navigate('/admin')
+ }
 
   return (
    <>
@@ -50,7 +57,7 @@ const card = () => {
          setState={setPassword}
        />
      </div>
-     <button>asA</button>
+     <button className="bg-green-400 p-2 rounded-md hover:bg-green-600 text-white">Iniciar Sesion</button>
      <p>
        Aun no tienes cuenta? Has Clic <Link to={"/registro"}>Aqui!</Link>{" "}
      </p>

@@ -6,6 +6,8 @@ import { useGet } from "../../../../public/hooks/useGet";
 const CardMenu = ({ text, data }) => {
   console.log(data);
 
+  
+
   //* Verificar si data es undefined
   if (!data) {
     return (
@@ -19,23 +21,18 @@ const CardMenu = ({ text, data }) => {
   }
 
   return (
-    <div className="CardMenu">
-      <nav className="title">
-        <h1>{text}</h1>
-      </nav>
-      <div className="container-cards-Home">
-        {data.productos.map((product) => (
-          <Card
-            key={product.id} //* Asegúrate de tener una clave única para cada elemento en el array mapeado
-            textName={product.nombr}
-            descripcion={product.descripcion}
-            size="15"
-            size2="77"
-            image={product.foto_producto}
-          />
-        ))}
-      </div>
-    </div>
+    <div className="container-cards-Home">
+    {data.productos.map((product) => (
+      <Card
+        key={product.id} //* Asegúrate de tener una clave única para cada elemento en el array mapeado
+        textName={product.nombr}
+        descripcion={product.descripcion}
+        size="15"
+        size2="77"
+        image={product.foto_producto}
+      />
+    ))}
+  </div>
   );
 };
 export default CardMenu;

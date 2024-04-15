@@ -1,42 +1,66 @@
 import { useState } from "react";
-//* CustomHook utilizado para los post.
+
 const usePost = (url, postObject) => {
+  const [error, setError] = useState();
+  const [information, setInformation] = useState(false);
+  const [avalible, setAvalible] = useState(true);
 
-    const [error, setError] = useState();
-    const [information, setInformation] = useState(false);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const handleSubmit = async(e) =>{
-        //? Obtenemos el objeto y la url mediante props.
-        e.preventDefault();
-
-        if (Object.values(postObject).every(value => value === '')) { //! Verrficar si el objeto esta vacio
-            setError(true)
-            return;
-        }
-        console.log(postObject);
-        try {
-            const res = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(
-                    postObject
-                )
-            })
-            const data = await res.json();
-            setInformation(data.message)
-        } catch (error) {
-            setError(true)
-            console.error("Error al crear: ", error );
-        }
+    if (Object.values(postObject).every((value) => value === "")) {
+      setError(true);
+      return;
     }
+
+    try {
+      const token = localStorage.getItem("token");
+
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postObject),
+      };
+
+      // Agregar token al header si existe en localStorage
+      if (token) {
+        requestOptions.headers["Authorization"] = `Bearer ${token}`;
+      }
+
+      const res = await fetch(url, requestOptions);
+      const data = await res.json();
+      console.log(data);
+
+      if (data.error) {
+        setAvalible(true);
+        return;
+      }
+
+      setInformation(data.message);
+      setAvalible(false);
+
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+      }
+
+      if (data.id_usuario) {
+        localStorage.setItem("id_usuario", data.id_usuario);
+      }
+    } catch (error) {
+      setError(true);
+      setAvalible(true);
+      console.error("Error al crear: ", error);
+    }
+  };
 
   return {
     handleSubmit,
     error,
-    information
-  }
-}
+    information,
+    avalible,
+  };
+};
 
-export default usePost
+export default usePost;
