@@ -18,20 +18,6 @@ const CardProducto = ({
 
   const [alertShown, setAlertShown] = useState(false);
 
-  // URL de la imagen predeterminada
-  const defaultImage =
-    "https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg";
-
-  // Función para validar la URL
-  const isValidUrl = (url) => {
-    // Expresión regular para validar la URL
-    const urlPattern =
-      /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/;
-    return urlPattern.test(url);
-  };
-
-  // Verifica si la imagen es una URL válida o está vacía y establece la imagen predeterminada si es así
-  const imageUrl = isValidUrl(img) ? img : defaultImage;
 
   const idUser = localStorage.getItem('id_usuario');
   console.log('id_user', idUser);
@@ -63,7 +49,7 @@ const CardProducto = ({
         <div className="container-left-producto">
           <img
             className="image-producto"
-            src={imageUrl}
+            src={img}
             alt="Imagen del producto"
           />
           <div className="text-producto">

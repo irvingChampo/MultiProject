@@ -3,7 +3,7 @@ import Button from "../../ui/button/Button";
 import Input from "../../ui/input/Input";
 import "./cardRegistro.css";
 import TresR from "../../../../public/img/Simbolo3r.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import usePost from "../../../../public/hooks/usePost";
 import { Alert } from "../../Alert";
 import { v4 as uuidv4 } from 'uuid';
@@ -33,6 +33,8 @@ function Registro() {
     foto_perfil: "URL de ejemplo"
   }
 
+  const navigate = useNavigate()
+
   const handleSubmit = async(e) =>{
     console.log(userObject);
     e.preventDefault()
@@ -46,6 +48,10 @@ function Registro() {
       })
       const data = await res.json();
       console.log(data);
+      if (data.message === "Usuario registrado exitosamente") {
+        navigate('/home')
+      }
+      
     } catch (error) {
       console.error('error', error);
       setError(true)

@@ -35,7 +35,6 @@ function Producto() {
                                text2="Cerdas rígidas hechas 100% de botellas recicladas." 
                                id = {id}
                         />
-                        <CardMenu text="Relacionado a tu búsqueda" />
                     </>
                 ) : (
                     <LoadingSpinner />
