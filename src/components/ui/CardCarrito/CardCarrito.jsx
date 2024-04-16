@@ -22,19 +22,6 @@ const CardCarrito = ({ textName, descripcion, size = "20", size2 = "25", image, 
         console.error('error', error);
       }
     }
-
-    // URL de la imagen predeterminada
-   const defaultImage = "https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg";
-
-   // Función para validar la URL
-   const isValidUrl = (url) => {
-     // Expresión regular para validar la URL
-     const urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/;
-     return urlPattern.test(url);
-   };
- 
-   // Verifica si la imagen es una URL válida o está vacía y establece la imagen predeterminada si es así
-   const imageUrl = isValidUrl(image) ? image : defaultImage;
     
 return(
   <>

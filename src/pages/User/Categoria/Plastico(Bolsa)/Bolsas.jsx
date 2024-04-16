@@ -8,7 +8,7 @@ import { useGet } from "../../../../../public/hooks/useGet";
 
 function Bolsas() {
   const { data } = useGet(
-    "http://44.194.73.147/api/v1/productos/por-categoria/Aluminio"
+    "http://44.194.73.147/api/v1/productos/por-categoria/Bolsa"
   );
   console.log(data);
 

@@ -10,19 +10,6 @@ const Card = ({ textName, descripcion, size = "20", size2 = "30", image, id }) =
 
   const { handleSubmit } = useDelete(`http://44.194.73.147/api/v1/productos/${id}`, localStorage.getItem('token'))
   
-    const defaultImage =
-    "https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg";
-
-  // Función para validar la URL
-  const isValidUrl = (url) => {
-    // Expresión regular para validar la URL
-    const urlPattern =
-      /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/;
-    return urlPattern.test(url);
-  };
-
-  // Verifica si la imagen es una URL válida o está vacía y establece la imagen predeterminada si es así
-  const imageUrl = isValidUrl(image) ? image : defaultImage;
 
   return (
     <>
@@ -32,7 +19,7 @@ const Card = ({ textName, descripcion, size = "20", size2 = "30", image, id }) =
       >
         <img
           className="w-full h-auto mb-4"
-          src={imageUrl}
+          src={image}
           alt="Imagen del producto"
         />
         <div className="text">

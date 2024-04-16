@@ -25,7 +25,8 @@ const card = () => {
   );
 
   const rol = localStorage.getItem('rol');
-  console.log('ROLLLLLLLLLLLLL', rol);
+
+setTimeout(()=>{
   if(rol === 'Administrador' && !avalible){
     navigate('/admin')
     return;
@@ -35,6 +36,7 @@ const card = () => {
     navigate('/home')
   }
 
+}, 2000)
 
   return (
    <>

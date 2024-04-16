@@ -12,12 +12,12 @@ function Home() {
         <Header />
         <section className='px-8'>
           <div>
-            <Descripcion/>
+            <Descripcion/> 
           </div>
           <div className='my-10'>
-            <MasVendido/>
+           <MasVendido/>
           </div>
-          <AgregadoReciente/>
+          <AgregadoReciente/> 
           {/* <MasAgregado/> */}
         </section>
         <Footer />

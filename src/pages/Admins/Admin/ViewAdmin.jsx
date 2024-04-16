@@ -4,7 +4,7 @@ import escoba from "../../../../public/img/escobas.jpg";
 import Header from "../../../components/pages/HeaderAdmin/HeaderAdmin";
 import Card from "../../../components/ui/cardAdmin/CardAdmin";
 import "./viewAdmin.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from "../../../components/Modal";
 import { useGet } from "../../../../public/hooks/useGet";
 import usePost from "../../../../public/hooks/usePost";
@@ -14,12 +14,27 @@ function ViewAdmin() {
 
 
   const [show, setShow] = useState(false);
+  const [data, setData] = useState();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("http://44.194.73.147/api/v1/productos");
+        if (!res.ok) {
+          throw new Error("No se pudo obtener la lista de productos.");
+        }
+        const data = await res.json();
+        console.log(data.productos);
+        setData(data.productos);
+      } catch (error) {
+        console.error("Error al obtener datos:", error.message);
+        // Aquí podrías establecer un estado de error para mostrar un mensaje al usuario
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
 
-  const { data } = useGet("http://44.194.73.147/api/v1/productos");
-
-  const handlePressShowModal = () => {
-    setShow(true);
-  };
 
   const LoadingSpinner = () => {
     return (
@@ -46,22 +61,22 @@ function ViewAdmin() {
             
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 my-10">
-            {data ? (
-              data.productos.map((producto) => (
+           {
+            data?  (
+              data.map((producto) => (
                 <Card
+                  key={producto._id}
                   textName={producto.nombre}
                   descripcion={producto.descripcion}
                   image={producto.foto_producto}
-                  id = { producto.id_producto }
-                  setShow = {setShow}
-                  
+                  id={producto.id_producto}
                 />
               ))
             ) : (
-              <LoadingSpinner />
-            )}
+              <h1>Cargando...</h1>
+            )
+           }
           </div>
-          <Modal isOpen={show} isClose={setShow}  />
         </div>
       </section>
     </>

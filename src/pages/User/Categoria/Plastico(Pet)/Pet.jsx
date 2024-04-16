@@ -8,7 +8,7 @@ import { useGet } from "../../../../../public/hooks/useGet";
 
 function Pet() {
   const { data } = useGet(
-    "http://44.194.73.147/api/v1/productos/por-categoria/PET"
+    "http://44.194.73.147/api/v1/productos/por-categoria/pet"
   );
   console.log(data);
 
