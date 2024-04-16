@@ -1,11 +1,9 @@
+import { useParams } from 'react-router-dom';
 import { useGet } from '../../../../public/hooks/useGet';
-import escoba from '../../../../public/img/escobas.jpg';
-import CardMenu from '../../../components/pages/cardMenu/CardMenu';
 import CardProducto from '../../../components/pages/cardProducto/CardProducto';
 import Footer from '../../../components/pages/footer/Footer';
 import Header from '../../../components/pages/header/Header';
 import './producto.css';
-import { useParams } from 'react-router-dom';
 
 function Producto() {
     const { id } = useParams();
@@ -29,10 +27,7 @@ function Producto() {
                                title={data.producto.nombre}
                                img={data.producto.foto_producto}
                                info={data.producto.descripcion}
-                               description1="Mango:"
-                               text1="· Largo, de madera y rígido."
-                               description2="Cerdas:"
-                               text2="Cerdas rígidas hechas 100% de botellas recicladas." 
+                               description1={data.producto.caracteristicas}
                                id = {id}
                         />
                     </>
