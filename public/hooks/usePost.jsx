@@ -1,71 +1,60 @@
 import { useState } from "react";
 
 const usePost = (url, postObject) => {
-  const [error, setError] = useState();
-  const [information, setInformation] = useState(false);
-  const [avalible, setAvalible] = useState(true);
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(false);
 
-  const handleSubmit = async (e) => {
-    console.log(postObject);
-    e.preventDefault();
+    // Función para realizar la solicitud POST
+    const handleSubmit = async (event) => {
+        // Asegurarse de que el evento está presente y prevenir su comportamiento predeterminado
+        if (event && typeof event.preventDefault === "function") {
+            event.preventDefault();
+        }
 
-    if (Object.values(postObject).every((value) => value === "")) {
-      setError(true);
-      return;
-    }
+        // Verifica que los campos en postObject no estén vacíos
+        if (Object.values(postObject).some((value) => value === "")) {
+            setError("Todos los campos deben estar llenos");
+            setSuccess(false);
+            return false;
+        }
 
-    try {
-      const token = localStorage.getItem("token");
+        try {
+            const token = localStorage.getItem("token");
 
-      const requestOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(postObject),
-      };
+            const requestOptions = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    ...(token && { "Authorization": `Bearer ${token}` }),
+                },
+                body: JSON.stringify(postObject),
+            };
 
-      // Agregar token al header si existe en localStorage
-      if (token) {
-        requestOptions.headers["Authorization"] = `Bearer ${token}`;
-      }
+            const response = await fetch(url, requestOptions);
+            const data = await response.json();
 
-      const res = await fetch(url, requestOptions);
-      const data = await res.json();
-      console.log(data);
-      
+            // Manejar errores de la respuesta
+            if (!response.ok || data.error) {
+                throw new Error(data.error || "Error al agregar el producto.");
+            }
 
-      if (data.error) {
-        setAvalible(true);
-        return;
-      }
+            // La operación fue exitosa
+            setSuccess(true);
+            return true;
+        } catch (error) {
+            // Manejar errores de la solicitud
+            setError(error.message);
+            setSuccess(false);
+            console.error("Error en la solicitud POST: ", error);
+            return false;
+        }
+    };
 
-      setInformation(data.message);
-      setAvalible(false);
-
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-      }
-
-      if (data.id_usuario) {
-        localStorage.setItem("id_usuario", data.id_usuario);
-      }
-      if(data.roles){
-        localStorage.setItem('rol',data.roles)
-      }
-    } catch (error) {
-      setError(true);
-      setAvalible(true);
-      console.error("Error al crear: ", error);
-    }
-  };
-
-  return {
-    handleSubmit,
-    error,
-    information,
-    avalible,
-  };
+    return {
+        handleSubmit,
+        error,
+        success,
+    };
 };
 
 export default usePost;
