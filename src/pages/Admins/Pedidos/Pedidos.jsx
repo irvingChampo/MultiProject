@@ -57,7 +57,7 @@ const Tabla = ({ datos }) => {
             Regresar
           </button>
         </Link>
-      <section className="container mx-auto p-4 mt-10">
+      <section className=" mx-auto p-4 mt-5 mb-10">
       
 
         <table className="w-full">
@@ -93,9 +93,11 @@ const Tabla = ({ datos }) => {
                     </Link>
                   </td>
                   <td className="py-2 px-6">
-                    {fila.carrito && fila.carrito.length > 1
-                      ? `Cantidad: ${fila.carrito.length}`
-                      : "No tiene productos agregados"}
+                  {fila.carrito.length > 0 ? (
+                      fila.carrito[0].totalProductos
+                    ) : (
+                      0
+                    )}
                   </td>
                 </tr>
               ))

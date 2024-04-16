@@ -28,7 +28,7 @@ export const CardSlider = ({ data }) => {
             {data ? <Slider {...settings}>
                 {data.productos.map(product => (
                     <div key={product._id} className=''>
-                        <Cards title={product.nombr} descripcion={product.descripcion} image={product.foto_producto} id={product.id_producto} />
+                        <Cards title={product.nombr} descripcion={product.descripcion} image={product.foto_producto} id={product.id_producto} precio={product.precio} />
                     </div>
                 ))}
             </Slider> : <LoadingSpinner />}

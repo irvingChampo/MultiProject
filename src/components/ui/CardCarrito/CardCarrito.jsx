@@ -4,7 +4,7 @@ import Input from '../input/Input';
 import { useEffect } from 'react';
 import { useDelete } from '../../../../public/hooks/useDelete';
 
-const CardCarrito = ({ textName, descripcion, size = "20", size2 = "30", image, value, id, idUser, idPro }) =>{ 
+const CardCarrito = ({ textName, descripcion, size = "20", size2 = "30", image, value, id, idUser, idPro, precio }) =>{ 
     console.log(id);
     console.log(idUser);
 
@@ -31,6 +31,7 @@ return(
         <h2 className="font-bold text-lg mb-2">Nombre: {textName}</h2>
         <h2 className="font-bold text-lg mb-2">Descripción:</h2>
         <p>{descripcion}</p>
+        <p>${precio}</p>
         <div className="flex justify-between items-center mt-2">
           <button className='bg-green-400 rounded-md shadow-md p-2 text-white hover:bg-green-600' onClick={handleEliminar}  >
             Eliminar

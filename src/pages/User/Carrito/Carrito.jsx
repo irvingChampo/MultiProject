@@ -6,11 +6,11 @@ import Card from "../../../components/ui/CardCarrito/CardCarrito";
 import Button from "../../../components/ui/button/Button";
 import "./carrito.css";
 import { useGet } from "../../../../public/hooks/useGet";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function Carrito() {
 
-  
+  const [total, setTotal] = useState()
 
   const LoadingSpinner = () => {
     return (
@@ -25,7 +25,15 @@ function Carrito() {
   const { data } = useGet(
     `http://44.194.73.147/api/v1/carrito/buscar/${idUser}`
   );
+
+  useEffect(() => {
+    if (data && data.carrito) {
+      setTotal(data.carrito.monto_total);
+    }
+  }, [data]);
   
+  
+
   return (
     <>
       <Header />
@@ -40,15 +48,18 @@ function Carrito() {
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols- gap-4 my-10">
             {data ? (
               data.carrito.productos.map((producto) => (
+                
                 <Card
                   key={producto._id}
                   textName={producto.producto.nombre}
                   descripcion={producto.producto.descripcion}
                   image={producto.producto.foto_producto}
                   value={producto.producto.cantidad}
+                  precio = { producto.producto.precio }
                   id = { producto.producto.id_producto }
                   idUser = { idUser }
                   idPro = { producto.producto._id }
+
                 />
               ))
             ) : (
@@ -57,10 +68,12 @@ function Carrito() {
           </div>
 
           <div className="info-carrito">
-            <h2 className="acumulado">$000</h2>
-            <Button size="10" size2="70">
+            <h2 className="acumulado">${total}</h2>
+           <Link to={'/home'}>
+           <Button size="10" size2="70">
               Pedir
             </Button>
+           </Link>
           </div>
         </div>
       </section>
