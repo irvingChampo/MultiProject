@@ -29,9 +29,8 @@ const CardProducto = ({
   
   const { handleSubmit, error, information } = usePost(`http://44.194.73.147/api/v1/carrito/${idUser}/agregar/${id}`, postObject)
 
-  if(information && !alertShown){ // Verifica si information tiene un valor y si la alerta aún no se ha mostrado
-    alert(information);
-    setAlertShown(true); // Establece el estado para indicar que la alerta se ha mostrado
+  if(information ){ // Verifica si information tiene un valor y si la alerta aún no se ha mostrado
+   alert('aaa')
   }
 
   

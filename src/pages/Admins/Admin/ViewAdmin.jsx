@@ -9,10 +9,7 @@ import { Modal } from "../../../components/Modal";
 import { useGet } from "../../../../public/hooks/useGet";
 import usePost from "../../../../public/hooks/usePost";
 
-
 function ViewAdmin() {
-
-
   const [show, setShow] = useState(false);
   const [data, setData] = useState();
   useEffect(() => {
@@ -30,11 +27,9 @@ function ViewAdmin() {
         // Aquí podrías establecer un estado de error para mostrar un mensaje al usuario
       }
     };
-  
+
     fetchData();
   }, []);
-  
-
 
   const LoadingSpinner = () => {
     return (
@@ -44,8 +39,6 @@ function ViewAdmin() {
     );
   };
 
-
-
   return (
     <>
       <Header />
@@ -53,16 +46,14 @@ function ViewAdmin() {
         <div className="container-cards">
           <div className="title-admin">
             <h2 className="margin0">Lista de productos</h2>
-            <Link to={'/add-product'}>
-            <button className="p-10 my-10">
-              <img className="w-10 h-10" src={Add} alt="Agregar" />
-            </button>
+            <Link to={"/add-product"}>
+              <button className="p-10 my-10">
+                <img className="w-10 h-10" src={Add} alt="Agregar" />
+              </button>
             </Link>
-            
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 my-10">
-           {
-            data?  (
+            {data ? (
               data.map((producto) => (
                 <Card
                   key={producto._id}
@@ -73,9 +64,8 @@ function ViewAdmin() {
                 />
               ))
             ) : (
-              <LoadingSpinner/>
-            )
-           }
+              <LoadingSpinner />
+            )}
           </div>
         </div>
       </section>

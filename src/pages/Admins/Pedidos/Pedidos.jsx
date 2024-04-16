@@ -7,6 +7,7 @@ const Tabla = ({ datos }) => {
   useEffect(() => {
     const api = async () => {
       try {
+        console.log(localStorage.getItem("token"));
         const res = await fetch(
           "http://44.194.73.147/api/v1/usuarios/usuarios",
           {
@@ -16,6 +17,7 @@ const Tabla = ({ datos }) => {
             },
           }
         );
+
         const data = await res.json();
         console.log(data);
         setData(data);

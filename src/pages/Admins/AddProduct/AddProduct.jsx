@@ -9,131 +9,136 @@ import usePost from "../../../../public/hooks/usePost";
 import "./addProduct.css";
 
 function AddProduct() {
-    // Estado local para los datos del producto
-    const [nombre, setNombre] = useState("");
-    const [descripcion, setDescripcion] = useState("");
-    const [cantidad, setCantidad] = useState("");
-    const [caracteristicas, setCaracteristicas] = useState("");
-    const [foto, setFoto] = useState("");
-    const [precio, setPrecio] = useState("");
-    const [categoria, setCategoria] = useState("");
+  // Estado local para los datos del producto
+  const [nombre, setNombre] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [cantidad, setCantidad] = useState("");
+  const [caracteristicas, setCaracteristicas] = useState("");
+  const [foto, setFoto] = useState("");
+  const [precio, setPrecio] = useState("");
+  const [categoria, setCategoria] = useState("");
 
-    // Para redirigir al usuario
-    const navigate = useNavigate();
+  // Para redirigir al usuario
+  const navigate = useNavigate();
 
-    // Generar un ID único para el producto
-    const id_producto = uuidv4();
+  // Generar un ID único para el producto
+  const id_producto = uuidv4();
 
-    // Objeto con los datos del producto
-    const productObject = {
-        id_producto,
-        nombre,
-        descripcion,
-        cantidad,
-        caracteristicas,
-        foto_producto: foto,
-        precio,
-        categoria,
-    };
+  // Objeto con los datos del producto
+  const productObject = {
+    id_producto,
+    nombre,
+    descripcion,
+    cantidad,
+    caracteristicas,
+    foto_producto: foto,
+    precio,
+    categoria,
+  };
 
-    // Usar usePost para realizar la solicitud POST
-    const { handleSubmit, error, success } = usePost('http://44.194.73.147/api/v1/productos', productObject);
+  // Usar usePost para realizar la solicitud POST
+  const { handleSubmit, error, success } = usePost(
+    "http://44.194.73.147/api/v1/productos",
+    productObject
+  );
 
-    // Función para agregar el producto
-    const handleAddProduct = async (event) => {
-        // Llamar a handleSubmit para enviar el formulario
-        const result = await handleSubmit(event);
+  // Función para agregar el producto
+  const handleAddProduct = async (event) => {
+    // Llamar a handleSubmit para enviar el formulario
+    const result = await handleSubmit(event);
 
-        // Si la operación fue exitosa, redirige a /admin
-        if (result) {
-            navigate("/admin");
-        } else {
-            console.error("Error al agregar el producto.");
-        }
-    };
+    // Si la operación fue exitosa, redirige a /admin
+    if (result) {
+      navigate("/admin");
+    } else {
+      console.error("Error al agregar el producto.");
+    }
+  };
 
-    return (
-        <>
-            <Header />
-            <section className="container-form">
-                <div className="form">
-                    <div className="form-image">
-                        <img src={Image} className="img-form" alt="Imagen" />
-                    </div>
-                    <Input
-                        type="text"
-                        placeholder="Nombre:"
-                        size="70"
-                        borde="5"
-                        height="5vh"
-                        setState={setNombre}
-                    />
-                    <Input
-                        type="text"
-                        placeholder="Categoría:"
-                        size="70"
-                        borde="5"
-                        height="5vh"
-                        setState={setCategoria}
-                    />
-                    <Input
-                        type="number"
-                        placeholder="Precio:"
-                        size="70"
-                        borde="5"
-                        height="5vh"
-                        setState={setPrecio}
-                    />
-                    <Input
-                        type="text"
-                        placeholder="Características:"
-                        size="70"
-                        borde="5"
-                        height="5vh"
-                        setState={setCaracteristicas}
-                    />
-                    <Input
-                        type="text"
-                        placeholder="Descripción:"
-                        size="70"
-                        borde="5"
-                        height="5vh"
-                        setState={setDescripcion}
-                    />
-                    <Input
-                        type="number"
-                        placeholder="En existencia:"
-                        size="70"
-                        borde="5"
-                        height="5vh"
-                        setState={setCantidad}
-                    />
-                    <Input
-                        type="text"
-                        placeholder="URL de la foto:"
-                        size="70"
-                        borde="5"
-                        height="5vh"
-                        setState={setFoto}
-                    />
-                    <div className="container-button">
-                        <Link className="Link-add-admin" to={"/admin"}>
-                            <button className="bg-red-500 rounded-md p-2 shadow-md transition-colors hover:bg-red-800">
-                                Cancelar
-                            </button>
-                        </Link>
-                        <button
-                            className="bg-green-400 rounded-md p-2 shadow-md transition-colors hover:bg-green-600"
-                            onClick={handleAddProduct}
-                        >
-                            Agregar
-                        </button>
-                    </div>
-                </div>
-            </section>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <section className="container-form">
+        <div className="form">
+          <div className="form-image">
+            <img src={Image} className="img-form" alt="Imagen" />
+          </div>
+          <Input
+            type="text"
+            placeholder="Nombre:"
+            size="70"
+            borde="5"
+            height="5vh"
+            setState={setNombre}
+          />
+          <Input
+            type="text"
+            placeholder="Categoría:"
+            size="70"
+            borde="5"
+            height="5vh"
+            setState={setCategoria}
+          />
+          <Input
+            type="number"
+            placeholder="Precio:"
+            size="70"
+            borde="5"
+            height="5vh"
+            setState={setPrecio}
+          />
+          <Input
+            type="text"
+            placeholder="Características:"
+            size="70"
+            borde="5"
+            height="5vh"
+            setState={setCaracteristicas}
+          />
+          <Input
+            type="text"
+            placeholder="Descripción:"
+            size="70"
+            borde="5"
+            height="5vh"
+            setState={setDescripcion}
+          />
+          <Input
+            type="number"
+            placeholder="En existencia:"
+            size="70"
+            borde="5"
+            height="5vh"
+            setState={setCantidad}
+          />
+          <Input
+            type="text"
+            placeholder="URL de la foto:"
+            size="70"
+            borde="5"
+            height="5vh"
+            setState={setFoto}
+          />
+          <div className="container-button">
+            <Link className="Link-add-admin" to={"/admin"}>
+              <button className="bg-red-500 rounded-md p-2 shadow-md transition-colors hover:bg-red-800">
+                Cancelar
+              </button>
+            </Link>
+            <Link to={'/admin'}>
+              <button
+                className="bg-green-400 rounded-md p-2 shadow-md transition-colors hover:bg-green-600"
+                onClick={handleAddProduct}
+              >
+                Agregar
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </>
+  );
 }
 
 export default AddProduct;
