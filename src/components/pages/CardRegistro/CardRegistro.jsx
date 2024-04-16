@@ -48,9 +48,6 @@ function Registro() {
       })
       const data = await res.json();
       console.log(data);
-      if (data.message === "Usuario registrado exitosamente") {
-        navigate('/home')
-      }
       
     } catch (error) {
       console.error('error', error);

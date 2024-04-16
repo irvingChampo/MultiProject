@@ -26,7 +26,7 @@ const CardCarrito = ({ textName, descripcion, size = "20", size2 = "25", image, 
 return(
   <>
     <div className="bg-white shadow-md rounded-lg p-8" style={{ width: `${size}rem`, height: `${size2}rem` }}>
-      <img className="w-full h-auto mb-4" src={imageUrl} alt="Imagen del producto" />
+      <img className="w-full h-auto mb-4" src={image} alt="Imagen del producto" />
       <div className="text">
         <h2 className="font-bold text-lg mb-2">Nombre: {textName}</h2>
         <h2 className="font-bold text-lg mb-2">Descripción:</h2>
