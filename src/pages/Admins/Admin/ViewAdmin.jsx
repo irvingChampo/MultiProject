@@ -73,7 +73,7 @@ function ViewAdmin() {
                 />
               ))
             ) : (
-              <h1>Cargando...</h1>
+              <LoadingSpinner/>
             )
            }
           </div>

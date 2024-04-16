@@ -4,7 +4,7 @@ import Input from '../input/Input';
 import { useEffect } from 'react';
 import { useDelete } from '../../../../public/hooks/useDelete';
 
-const CardCarrito = ({ textName, descripcion, size = "20", size2 = "25", image, value, id, idUser, idPro }) =>{ 
+const CardCarrito = ({ textName, descripcion, size = "20", size2 = "30", image, value, id, idUser, idPro }) =>{ 
     console.log(id);
     console.log(idUser);
 

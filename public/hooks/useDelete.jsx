@@ -15,6 +15,7 @@ export const useDelete = (url, token) => {
             });
             const data = await res.json();
             console.log("Data after delete:", data);
+            window.location.reload();
         } catch (error) {
             console.error("Error deleting data: ", error);
             setError(true);
