@@ -9,6 +9,7 @@ import usePost from "../../../../public/hooks/usePost";
 import "./addProduct.css";
 
 function AddProduct() {
+    // Estado local para los datos del producto
     const [nombre, setNombre] = useState("");
     const [descripcion, setDescripcion] = useState("");
     const [cantidad, setCantidad] = useState("");
@@ -17,10 +18,10 @@ function AddProduct() {
     const [precio, setPrecio] = useState("");
     const [categoria, setCategoria] = useState("");
 
-    // Para redirigir a /admin después de agregar el producto exitosamente
+    // Para redirigir al usuario
     const navigate = useNavigate();
 
-    // Genera un ID único para el producto
+    // Generar un ID único para el producto
     const id_producto = uuidv4();
 
     // Objeto con los datos del producto
@@ -35,19 +36,16 @@ function AddProduct() {
         categoria,
     };
 
-    // Obtiene la función handleSubmit de usePost para realizar la solicitud POST
-    const { handleSubmit } = usePost('http://44.194.73.147/api/v1/productos', productObject);
+    // Usar usePost para realizar la solicitud POST
+    const { handleSubmit, error, success } = usePost('http://44.194.73.147/api/v1/productos', productObject);
 
     // Función para agregar el producto
     const handleAddProduct = async (event) => {
-        // Prevenir el comportamiento predeterminado del formulario
-        event.preventDefault();
-
-        // Realizar la operación de agregar el producto
-        const success = await handleSubmit();
+        // Llamar a handleSubmit para enviar el formulario
+        const result = await handleSubmit(event);
 
         // Si la operación fue exitosa, redirige a /admin
-        if (success) {
+        if (result) {
             navigate("/admin");
         } else {
             console.error("Error al agregar el producto.");

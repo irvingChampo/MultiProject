@@ -3,57 +3,66 @@ import { useState } from "react";
 const usePost = (url, postObject) => {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
+    const [data, setData] = useState(null);
 
-    // Función para realizar la solicitud POST
+    // Función para manejar la solicitud POST
     const handleSubmit = async (event) => {
-        // Asegurarse de que el evento está presente y prevenir su comportamiento predeterminado
+        // Prevenir el comportamiento predeterminado del evento si se proporciona
         if (event && typeof event.preventDefault === "function") {
             event.preventDefault();
         }
 
-        // Verifica que los campos en postObject no estén vacíos
-        if (Object.values(postObject).some((value) => value === "")) {
+        // Validar que todos los campos de postObject estén llenos
+        if (Object.values(postObject).some(value => value === "")) {
             setError("Todos los campos deben estar llenos");
             setSuccess(false);
             return false;
         }
 
         try {
+            // Obtener el token de localStorage (si existe)
             const token = localStorage.getItem("token");
 
+            // Configurar las opciones de la solicitud POST
             const requestOptions = {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
+                    // Incluir token en el header si está presente
                     ...(token && { "Authorization": `Bearer ${token}` }),
                 },
                 body: JSON.stringify(postObject),
             };
 
+            // Realizar la solicitud POST
             const response = await fetch(url, requestOptions);
-            const data = await response.json();
+            const responseData = await response.json();
 
-            // Manejar errores de la respuesta
-            if (!response.ok || data.error) {
-                throw new Error(data.error || "Error al agregar el producto.");
+            // Verificar si la respuesta es exitosa
+            if (!response.ok || responseData.error) {
+                throw new Error(responseData.error || "Error en la solicitud POST");
             }
 
-            // La operación fue exitosa
+            // Solicitud exitosa, actualizar estados
             setSuccess(true);
-            return true;
-        } catch (error) {
-            // Manejar errores de la solicitud
-            setError(error.message);
+            setData(responseData);
+            return true; // Indicar éxito
+
+        } catch (err) {
+            // Manejo de errores
+            setError(err.message);
             setSuccess(false);
-            console.error("Error en la solicitud POST: ", error);
-            return false;
+            console.error("Error en la solicitud POST:", err);
+            return false; // Indicar fallo
         }
     };
 
+    // Retornar la función handleSubmit, error, éxito, y datos
     return {
         handleSubmit,
         error,
         success,
+        data,
     };
 };
 
